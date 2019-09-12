@@ -29,4 +29,8 @@
     <select id="selectByName" resultType="map">
         select id, nickname, avatar, sex, credit from tbl_user where nickname = '${nickname}'
     </select>
+
+    <select id="selectUserHouse" resultType="map">
+        select a.id as uid, a.nickname, a.avatar, a.sex, b.id, b.kind, b.arrive_time, b.leave_time, b.phone, b.detail_address from tbl_user a left join tbl_user_house b on b.user_id = a.id where a.id='${id}'
+    </select>
 </mapper>

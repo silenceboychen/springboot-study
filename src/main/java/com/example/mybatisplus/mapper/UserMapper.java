@@ -14,4 +14,6 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> selectUserListPage(Page<User> pagination);
 
     List<Map> selectByName(@Param("nickname") String nickname);
+
+    List<Map> selectUserHouse(Integer id);
 }

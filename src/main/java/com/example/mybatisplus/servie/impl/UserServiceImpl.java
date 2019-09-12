@@ -64,4 +64,9 @@ public class UserServiceImpl implements UserService {
 //        return userList;
         return userMapper.selectUserListPage(page);
     }
+
+    @Override
+    public List<Map> getUserHouse(Integer id) {
+        return userMapper.selectUserHouse(id);
+    }
 }
