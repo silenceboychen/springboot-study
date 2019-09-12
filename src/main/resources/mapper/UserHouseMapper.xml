@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisplus.mapper.UserHouseMapper">
+
+    <select id="selectUserHouseWithPage" resultType="map">
+        select a.id as uid, a.nickname, a.avatar, a.sex, b.id, b.kind, b.arrive_time, b.leave_time, b.phone, b.detail_address from tbl_user a left join tbl_user_house b on b.user_id = a.id where a.id='${id}'
+    </select>
+
+<!--    <select id="selectUserHouseWithPage" resultType="map">-->
+<!--        select * from tbl_user_house where user_id=10009-->
+<!--    </select>-->
+
+</mapper>
