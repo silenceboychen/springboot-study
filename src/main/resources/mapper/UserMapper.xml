@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisplus.mapper.UserMapper">
+
+    <!-- 映射表字段与实体类属性 -->
+    <resultMap id="BaseResultMap" type="com.example.mybatisplus.entity.User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <id column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <id column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <id column="sex" jdbcType="INTEGER" property="sex"/>
+        <id column="openid" jdbcType="VARCHAR" property="openid"/>
+        <id column="unionid" jdbcType="VARCHAR" property="unionid"/>
+        <id column="credit" jdbcType="INTEGER" property="credit"/>
+        <id column="create_time" jdbcType="VARCHAR" property="createTime"/>
+        <id column="update_time" jdbcType="DATE" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+      id, nickname, avatar, sex, credit
+    </sql>
+
+    <!-- 自定义查询方法 -->
+    <select id="selectByName" resultMap="BaseResultMap">
+<!--&#45;&#45;         select <include refid="Base_Column_List"/> from tbl_user where nickname = '${nickname}'-->
+        select * from tbl_user where nickname = '${nickname}'
+    </select>
+
+
+</mapper>

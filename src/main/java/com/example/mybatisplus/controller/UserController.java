@@ -20,6 +20,12 @@ public class UserController {
         return userService.getUserInfoById(id);
     }
 
+    @GetMapping("name")
+    public List<User> getByName(String name) {
+        System.out.println(name);
+        return userService.getUserInfoByName(name);
+    }
+
     @GetMapping("info")
     public List<User> getUserList(Integer sex, Integer credit) {
         System.out.println(sex);
