@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserInfoByName(String nickname) {
-        List<User> userInfo = userMapper.selectByName(nickname);
+    public List<Map> getUserInfoByName(String nickname) {
+        List<Map> userInfo = userMapper.selectByName(nickname);
         return userInfo;
     }
 

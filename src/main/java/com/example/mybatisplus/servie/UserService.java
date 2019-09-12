@@ -4,12 +4,13 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.mybatisplus.entity.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
     // 通过用户id获取用户信息(自定义sql)
     User getUserInfoById(Integer id);
     // 通过用户昵称获取用户列表(自定义sql)
-    List<User> getUserInfoByName(String nickname);
+    List<Map> getUserInfoByName(String nickname);
     // 保存用户信息
     int saveUserInfo(User user);
     // 更新用户信息

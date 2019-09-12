@@ -21,10 +21,12 @@
     </sql>
 
     <!-- 自定义查询方法 -->
-    <select id="selectByName" resultMap="BaseResultMap">
-<!--&#45;&#45;         select <include refid="Base_Column_List"/> from tbl_user where nickname = '${nickname}'-->
-        select * from tbl_user where nickname = '${nickname}'
+<!--    <select id="selectByName" resultMap="BaseResultMap">-->
+<!--&lt;!&ndash;&#45;&#45;         select <include refid="Base_Column_List"/> from tbl_user where nickname = '${nickname}'&ndash;&gt;-->
+<!--        select * from tbl_user where nickname = '${nickname}'-->
+<!--    </select>-->
+
+    <select id="selectByName" resultType="map">
+        select id, nickname, avatar, sex, credit from tbl_user where nickname = '${nickname}'
     </select>
-
-
 </mapper>

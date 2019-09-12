@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("user")
@@ -21,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("name")
-    public List<User> getByName(String name) {
+    public List<Map> getByName(String name) {
         System.out.println(name);
         return userService.getUserInfoByName(name);
     }
